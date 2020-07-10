@@ -13,7 +13,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
+    "test": "env DEBUG=NatsService:* tsdx test --passWithNoTests",
     "lint": "tsdx lint",
     "prepare": "tsdx build"
   },
@@ -31,13 +31,16 @@
   "author": "onichandame",
   "module": "dist/ts-nats-template.esm.js",
   "devDependencies": {
-    "tsdx": "^0.13.2",
     "@faasjs/eslint-config-recommended": "beta",
+    "@types/debug": "^4.1.5",
+    "eslint-plugin-jest": "*",
     "husky": "^4.2.5",
+    "tsdx": "^0.13.2",
     "tslib": "^2.0.0",
     "typescript": "^3.9.6"
   },
   "dependencies": {
+    "debug": "^4.1.1",
     "ts-nats": "^1.2.15"
   }
 }
